@@ -55,7 +55,7 @@ New-AzRoleDefinition -InputFile  ./aibRoleImageCreation.json
 New-AzRoleAssignment -ObjectId $idenityNamePrincipalId -RoleDefinitionName $imageRoleDefName -Scope "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"
 
 # update AIB image config template
-$templateUrl="https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/0_Creating_a_Custom_Windows_Managed_Image/helloImageTemplateWin.json"
+$templateUrl="https://raw.githubusercontent.com/robmc-itpro/AzureImageBuilder/master/Templates/helloImageTemplateWin.json"
 $templateFilePath = "helloImageTemplateWin.json"
 
 # download configs

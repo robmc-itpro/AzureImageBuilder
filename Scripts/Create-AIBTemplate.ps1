@@ -1,2 +1,3 @@
-$TemplateUri = "https://raw.githubusercontent.com/robmc-itpro/AzureImageBuilder/master/Templates/helloImageTemplateWin.json"
-New-AzResourceGroupDeployment -ResourceGroupName RG_NEU_AzureImageBuilder -TemplateUri $TemplateUri -OutVariable Output -Verbose
+New-AzResourceGroupDeployment -ResourceGroupName $imageResourceGroup -TemplateFile $templateFilePath -api-version "2019-05-01-preview" -imageTemplateName $imageTemplateName -svclocation $location
+
+# note this will take minute, as validation is run (security / dependencies etc.)

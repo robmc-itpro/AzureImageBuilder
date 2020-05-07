@@ -93,9 +93,9 @@
         "distribute": 
             [
                 {   "type":"ManagedImage",
-                    "imageId": "/subscriptions/4fd6afde-1294-4328-ae49-d68957b37d38/resourceGroups/RG_NEU_AzureImageBuilder/providers/Microsoft.Compute/images/W10_1909_EVD_REF001",
-                    "location": "[resourcegroup().location]",
-                    "runOutputName": "aibW10",
+                    "imageId": "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/images/<imageName>",
+                    "location": "<region>",
+                    "runOutputName": "<runOutputName>",
                     "artifactTags": {
                         "source": "azVmImageBuilder",
                         "baseosimg": "windows10"

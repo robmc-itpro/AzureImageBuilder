@@ -60,6 +60,11 @@
                 "scriptUri": "https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/testPsScript.ps1"
             },
             {
+                "type": "PowerShell",
+                "name": "InstallApps",
+                "scriptUri": "https://raw.githubusercontent.com/robmc-itpro/AzureImageBuilder/master/Scripts/InstallPackages.ps1"
+            },
+            {
                 "type": "WindowsRestart",
                 "restartCheckCommand": "echo Azure-Image-Builder-Restarted-the-VM  > c:\\buildArtifacts\\azureImageBuilderRestart.txt",
                 "restartTimeout": "5m"

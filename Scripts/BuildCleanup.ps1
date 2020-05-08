@@ -11,3 +11,7 @@ Remove-AzRoleDefinition -Name "$idenityNamePrincipalId" -Force -Scope "/subscrip
 
 ## delete identity
 Remove-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName -Force
+
+# Delete Resource Group
+
+Remove-AzResourceGroup $imageResourceGroup -Force

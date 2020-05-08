@@ -16,13 +16,13 @@ $location="northeurope"
 $subscriptionID=$currentAzContext.Subscription.Id
 
 # name of the image to be created
-$imageName="W10_1909_EVD_REF001"
+$imageName="W10_1909_REF001"
 
 # image distribution metadata reference name
 $runOutputName="aibW10"
 
 # image template name
-$imageTemplateName="W10_1909_EVD_TMP001"
+$imageTemplateName="W10_1909_TMP001"
 
 # create resource group for image and image template resource
 New-AzResourceGroup -Name $imageResourceGroup -Location $location
@@ -33,7 +33,7 @@ $imageRoleDefName="Azure Image Builder Image Def"+$timeInt
 $idenityName="aibIdentity"+$timeInt
 
 ## Add AZ PS module to support AzUserAssignedIdentity
-Install-Module -Name Az.ManagedServiceIdentity -force
+Import-Module -Name Az.ManagedServiceIdentity
 
 # create identity
 New-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName
@@ -53,6 +53,9 @@ Invoke-WebRequest -Uri $aibRoleImageCreationUrl -OutFile $aibRoleImageCreationPa
 
 # create role definition
 New-AzRoleDefinition -InputFile  ./aibRoleImageCreation.json
+
+# Start Sleep
+start-sleep -Seconds 10
 
 # grant role definition to image builder service principal
 New-AzRoleAssignment -ObjectId $idenityNamePrincipalId -RoleDefinitionName $imageRoleDefName -Scope "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"

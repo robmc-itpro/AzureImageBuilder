@@ -33,7 +33,7 @@ $imageRoleDefName="Azure Image Builder Image Def"+$timeInt
 $idenityName="aibIdentity"+$timeInt
 
 ## Add AZ PS module to support AzUserAssignedIdentity
-Install-Module -Name Az.ManagedServiceIdentity
+Install-Module -Name Az.ManagedServiceIdentity -force
 
 # create identity
 New-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName

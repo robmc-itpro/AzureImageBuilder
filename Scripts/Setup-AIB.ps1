@@ -25,7 +25,7 @@ $runOutputName="aibW10"
 $imageTemplateName="W10_1909_EVD_TMP001"
 
 # create resource group for image and image template resource
-# New-AzResourceGroup -Name $imageResourceGroup -Location $location
+New-AzResourceGroup -Name $imageResourceGroup -Location $location
 
 # setup role def names, these need to be unique
 $timeInt=$(get-date -UFormat "%s")

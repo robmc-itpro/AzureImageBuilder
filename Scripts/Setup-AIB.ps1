@@ -16,13 +16,13 @@ $location="northeurope"
 $subscriptionID=$currentAzContext.Subscription.Id
 
 # name of the image to be created
-$imageName="W10_1909_REF001"
+$imageName="W10_2004_REF001"
 
 # image distribution metadata reference name
 $runOutputName="aibW10"
 
 # image template name
-$imageTemplateName="W10_1909_TMP001"
+$imageTemplateName="W10_2004_TMP001"
 
 # create resource group for image and image template resource
 New-AzResourceGroup -Name $imageResourceGroup -Location $location
@@ -76,4 +76,4 @@ Invoke-WebRequest -Uri $templateUrl -OutFile $templateFilePath -UseBasicParsing
 
 # Submit the template, note this will take minute, as validation is run (security / dependencies etc.)
 
-New-AzResourceGroupDeployment -ResourceGroupName $imageResourceGroup -TemplateFile $templateFilePath -api-version "2019-05-01-preview" -imageTemplateName $imageTemplateName -svclocation $location
+New-AzResourceGroupDeployment -ResourceGroupName $imageResourceGroup -TemplateFile $templateFilePath -api-version "2020-02-14-preview" -imageTemplateName $imageTemplateName -svclocation $location

@@ -7,7 +7,7 @@ Remove-AzResource -ResourceId $resTemplateId.ResourceId -Force
 Remove-AzRoleAssignment -ObjectId $idenityNamePrincipalId -RoleDefinitionName $imageRoleDefName -Scope "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"
 
 ## remove definitions
-Remove-AzRoleDefinition -Name "$idenityNamePrincipalId" -Force -Scope "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"
+Remove-AzRoleDefinition -Name "$imageRoleDefName" -Force -Scope "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"
 
 ## delete identity
 Remove-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName -Force
